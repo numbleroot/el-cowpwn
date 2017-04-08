@@ -10,7 +10,8 @@ enum Move {
 }
 
 message GameJoin {
-    string opponentID = 1;
+    string userID = 1;
+    string opponentID = 2;
 }
 
 message GameRequest {

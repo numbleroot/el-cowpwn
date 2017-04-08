@@ -13,6 +13,6 @@ message UserResponse {
 
 message UserStored {
     string id = 1;
-    string email = 2;
+    string name = 2;
     string password = 3;
 }
