@@ -9,15 +9,19 @@ enum Move {
     RELOAD = 3;
 }
 
-message GameUpdate {
-    string gameID = 1;
-    string userID = 2;
-    Move move = 3;
+message GameJoin {
+    string opponentID = 1;
 }
 
 message GameRequest {
     string gameID = 1;
     string userID = 2;
+}
+
+message GameUpdate {
+    string gameID = 1;
+    string userID = 2;
+    Move move = 3;
 }
 
 message UserGameData {
