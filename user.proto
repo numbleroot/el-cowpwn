@@ -3,16 +3,16 @@ syntax = "proto3";
 package elcowpwn;
 
 message UserRequest {
-    userID string = 1;
+    string userID = 1;
 }
 
 message UserResponse {
-    userID string = 1;
-    repeated games string = 2;
+    string userID = 1;
+    repeated string games = 2;
 }
 
 message UserStored {
-    id string = 1;
-    email string = 2;
-    password string = 3;
+    string id = 1;
+    string email = 2;
+    string password = 3;
 }
