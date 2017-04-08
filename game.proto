@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package elcowpwn;
+
+enum Move {
+    UNDEFINED = 0;
+    ATTACK = 1;
+    BLOCK = 2;
+    RELOAD = 3;
+}
+
+message GameUpdate {
+    string gameID = 1;
+    string userID = 2;
+    Move move = 3;
+}
+
+message GameRequest {
+    string gameID = 1;
+    string userID = 2;
+}
+
+message UserGameData {
+    uint32 ammunition = 1;
+}
+
+message GameResponse {
+
+    enum RequestStatus {
+        SUCCESS = 0;
+        ERROR = 1;
+        BAD_GAME = 2;
+        BAD_USER = 3;
+        BAD_MOVE = 4;
+    }
+
+    enum GameStatus {
+        WAITING_FOR_YOU = 0;
+        WAITING_FOR_OTHERS = 1;
+        OVER = 2;
+    }
+
+    RequestStatus requestStatus = 1;
+    string gameID = 2;
+    GameStatus gameStatus = 3;
+    map<string, UserGameData> gameData = 4;
+}
+
+message GameStoredUserData {
+    UserGameData userData = 1;
+    Move nextMove = 2;
+}
+
+message GameStored {
+    string gameID = 1;
+    bool active = 2;
+    map<string, GameStoredUserData> gameData = 3;
+}

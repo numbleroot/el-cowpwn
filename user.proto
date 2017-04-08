@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package elcowpwn;
+
+message UserRequest {
+    userID string = 1;
+}
+
+message UserResponse {
+    userID string = 1;
+    repeated games string = 2;
+}
+
+message UserStored {
+    id string = 1;
+    email string = 2;
+    password string = 3;
+}
