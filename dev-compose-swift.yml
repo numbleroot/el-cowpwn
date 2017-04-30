@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  swift-cowpwn:
+    image: metalmatze/el-cowpwn-swift:latest
+    container_name: swift-cowpwn
+    ports:
+    - "127.0.0.1:20601:20601"
+    - "127.0.0.1:23244:23244"
+    - "127.0.0.1:24602:24602"
+    - "127.0.0.1:27801:27801"

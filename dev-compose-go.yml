@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  go-cowpwn:
+    image: metalmatze/el-cowpwn-go:latest
+    container_name: go-cowpwn
+    command:
+    - "-runAddr=go-cowpwn:3456"
+    - "-gameServerUserAddr=127.0.0.1:20601"
+    - "-gameServerGameAddr=127.0.0.1:23244"
+    - "-gameServerMoveAddr=127.0.0.1:24602"
+    - "-gameServerJoinAddr=127.0.0.1:27801"
+    ports:
+    - "127.0.0.1:3456:3456"

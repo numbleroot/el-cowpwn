@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  go-cowpwn:
+    image: metalmatze/el-cowpwn-go:latest
+    container_name: go-cowpwn
+    command:
+    - "-runAddr=go-cowpwn:3456"
+    - "-gameServerUserAddr=swift-cowpwn:20601"
+    - "-gameServerGameAddr=swift-cowpwn:23244"
+    - "-gameServerMoveAddr=swift-cowpwn:24602"
+    - "-gameServerJoinAddr=swift-cowpwn:27801"
+    ports:
+    - "127.0.0.1:3456:3456"
+    links:
+    - swift-cowpwn
+
+  swift-cowpwn:
+    image: metalmatze/el-cowpwn-swift:latest
+    container_name: swift-cowpwn
