@@ -1,4 +1,10 @@
+[entry-server]
+
+    [entry-server.ports]
+        http = 3456
+
 [game-server]
+
 	[game-server.ports]
 		user = 20601
 		game = 23244
